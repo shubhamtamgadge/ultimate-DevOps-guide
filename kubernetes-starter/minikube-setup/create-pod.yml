@@ -1,0 +1,16 @@
+# pod creation using YAML 
+#---> NOTE- This yml is only to create pods not to install minikube
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-nginx-pod
+  labels:
+    app: nginx
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+
