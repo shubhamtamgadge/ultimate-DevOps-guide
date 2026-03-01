@@ -1,0 +1,2 @@
+# NOTE - we do not create pods directly instead we create deployment or ReplicaSet
+
