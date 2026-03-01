@@ -1,3 +1,27 @@
 
 # NOTE - we do not create pods directly instead we create deployment or ReplicaSet
 
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myrs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      apptype: web-backend
+  template:
+    metadata:
+      labels:
+        apptype: web-backend
+    spec:
+        containers:
+        - name: mycontainer
+            image: nginx:latest
+            ports:
+            - containerPort: 80
+
+
+
+
