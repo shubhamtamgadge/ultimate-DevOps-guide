@@ -58,30 +58,6 @@ echo "✅ Worker Node Setup Complete!"
 echo "👉 Now run the 'kubeadm join ...' command from your Master Node here."
 
 
-apiVersion: apps/v1
-kind: deployment
-metadata:
-  name: sb-deployment
-  labels:
-    app: sb-app
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: sb-app
-  template:
-    metadata:
-      labels:
-        app: sb-app
-    spec:
-      containers:
-        - name: sb-container
-          image: genieashwani/springboot-app:v1
-          ports:
-            - containerPort: 8080
-
-
-
 
 apiVersion: apps/v1
 kind: ReplicaSet
@@ -102,5 +78,6 @@ spec:
             image: nginx:latest
             ports:
             - containerPort: 80
+
 
 
