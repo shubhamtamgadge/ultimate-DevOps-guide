@@ -59,25 +59,4 @@ echo "👉 Now run the 'kubeadm join ...' command from your Master Node here."
 
 
 
-apiVersion: apps/v1
-kind: ReplicaSet
-metadata:
-  name: myrs
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      apptype: web-backend
-  template:
-    metadata:
-      labels:
-        apptype: web-backend
-    spec:
-        containers:
-        - name: mycontainer
-            image: nginx:latest
-            ports:
-            - containerPort: 80
-
-
 
