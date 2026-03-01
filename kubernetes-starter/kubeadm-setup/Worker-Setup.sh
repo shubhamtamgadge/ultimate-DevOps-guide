@@ -1,3 +1,5 @@
+#NOTE - use ubuntu Distribution 
+
 #!/bin/bash
 set -e
 
@@ -99,3 +101,4 @@ spec:
             image: nginx:latest
             ports:
             - containerPort: 80
+
