@@ -1,4 +1,5 @@
-#NOTE - use ubuntu Distribution 
+#NOTE - use ubuntu Distribution  |   Instance  type - c7i-flex-large (4gb memory)
+
 
 #!/bin/bash
 set -e
@@ -101,4 +102,5 @@ spec:
             image: nginx:latest
             ports:
             - containerPort: 80
+
 
