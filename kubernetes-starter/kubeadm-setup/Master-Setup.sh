@@ -1,3 +1,5 @@
+#NOTE - use ubuntu Distribution 
+
 #!/bin/bash
 set -e
 
@@ -65,3 +67,4 @@ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.3/
 echo "✅ Kubernetes Master Node Setup Complete!"
 echo "👉 Use the command below to join worker nodes:"
 kubeadm token create --print-join-command
+
