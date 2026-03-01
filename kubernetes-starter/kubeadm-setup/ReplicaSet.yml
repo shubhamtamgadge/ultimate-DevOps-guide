@@ -15,12 +15,11 @@ spec:
       labels:
         apptype: web-backend
     spec:
-        containers:
-        - name: mycontainer
-            image: nginx:latest
-            ports:
-            - containerPort: 80
-
+      containers:
+      - name: mycontainer
+        image: nginx:latest
+        ports:
+        - containerPort: 80
 
 
 
