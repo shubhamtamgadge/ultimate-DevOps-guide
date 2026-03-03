@@ -22,7 +22,7 @@ sudo systemctl status docker
 
 # 4. Exit from current session and re-connect
 exit
-ress 'R' to re-connect  
+press 'R' to re-connect  
 
 # 5. Download and Install Kubectl Client
 sudo curl --silent --location -o /usr/local/bin/kubectl \
