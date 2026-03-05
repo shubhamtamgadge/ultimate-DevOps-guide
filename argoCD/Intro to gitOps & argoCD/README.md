@@ -51,4 +51,4 @@ GitOps is built on four key principles:
 
 ---
 
-Happy Learning!
+
