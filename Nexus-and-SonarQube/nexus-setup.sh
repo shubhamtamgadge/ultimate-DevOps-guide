@@ -4,13 +4,14 @@ set -e
 echo "🔄 Updating system..."
 sudo dnf update -y
 
-echo "☕ Installing Java 17 (Amazon Corretto)..."
-sudo dnf install -y java-17-amazon-corretto
+echo "☕ Installing Java 21 (Amazon Corretto)..."
+sudo dnf install -y java-21-amazon-corretto
 java -version
 
 echo "⬇️ Downloading Nexus Repository OSS 3.83.2-01..."
 cd /tmp
-wget https://download.sonatype.com/nexus/3/nexus-3.83.2-01-linux-x86_64.tar.gz -O nexus.tar.gz
+wget https://download.sonatype.com/nexus/3/nexus-3.90.0-21-linux-x86_64.tar.gz -O nexus.tar.gz
+
 
 echo "📂 Extracting Nexus to /opt..."
 sudo tar -xvzf nexus.tar.gz -C /opt
