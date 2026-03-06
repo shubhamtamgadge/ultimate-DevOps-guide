@@ -1,3 +1,5 @@
+#note - for amazon linux/redhat only -- not for ubuntu
+
 #!/bin/bash
 set -e
 
