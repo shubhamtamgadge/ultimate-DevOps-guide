@@ -168,7 +168,8 @@ in defauld uncomment inventory
 
 ```bash
 [defaults]
- some basic default values...
+#some basic default values...
+
 inventory      = /etc/ansible/hosts      <------ uncomment this
 ```
 
