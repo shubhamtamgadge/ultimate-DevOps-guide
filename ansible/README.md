@@ -163,6 +163,7 @@ sudo vi /etc/ansible/ansible.cfg
 ```
 
 press gg to go on first line
+
 in defauld uncomment inventory
 
 
@@ -179,6 +180,17 @@ sudo_user      = ansible        <------- uncomment and change root -> ansible
 
 ```bash
 sudo vi /etc/ansible/hosts
+```
+
+create gropus like this
+```bash
+## [webservers]                 <----- uncomment and add your node ips
+## alpha.example.org
+## 192.168.1.110
+
+## [dbservers]
+## db01.intranet.mydomain.net
+## 10.25.1.57
 ```
 
 ---
