@@ -169,7 +169,7 @@ in defauld uncomment inventory
 
 [defaults]
 
-# some basic default values...
+ some basic default values...
 
 inventory      = /etc/ansible/hosts      <------ uncomment this
 #library        = /usr/share/my_modules/
