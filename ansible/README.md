@@ -184,6 +184,10 @@ sudo vi /etc/ansible/hosts
 
 create gropus like this
 ```bash
+# Ex: Ungrouped hosts, specify before any group headers.
+## blue.example.com
+## 192.168.100.1
+
 ## [webservers]                 <----- uncomment and add your node ips
 ## alpha.example.org
 ## 192.168.1.110
