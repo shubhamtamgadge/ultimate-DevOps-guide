@@ -162,6 +162,19 @@ Edit the Ansible configuration file.
 sudo vi /etc/ansible/ansible.cfg
 ```
 
+press gg to go on first line
+
+in defauld uncomment inventory
+
+
+[defaults]
+
+# some basic default values...
+
+inventory      = /etc/ansible/hosts      <------ uncomment this
+#library        = /usr/share/my_modules/
+
+
 Edit the inventory file.
 
 ```bash
