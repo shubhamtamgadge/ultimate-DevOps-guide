@@ -156,15 +156,15 @@ cd ~
 
 # **8. Configure Ansible**
 
-##Edit the Ansible configuration file.
+**Edit the Ansible configuration file.**
 
 ```bash
 sudo vi /etc/ansible/ansible.cfg
 ```
 
 press gg to go on first line
-
 in defauld uncomment inventory
+
 
 ```bash
 [defaults]
@@ -175,7 +175,7 @@ inventory      = /etc/ansible/hosts      <------ uncomment this
 sudo_user      = ansible        <------- uncomment and change root -> ansible
 ```
 
-##Edit the inventory file.
+**Edit the inventory file.**
 
 ```bash
 sudo vi /etc/ansible/hosts
