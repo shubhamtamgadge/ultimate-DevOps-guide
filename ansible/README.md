@@ -156,7 +156,7 @@ cd ~
 
 # **8. Configure Ansible**
 
-Edit the Ansible configuration file.
+#Edit the Ansible configuration file.
 
 ```bash
 sudo vi /etc/ansible/ansible.cfg
@@ -172,10 +172,11 @@ in defauld uncomment inventory
  some basic default values...
 
 inventory      = /etc/ansible/hosts      <------ uncomment this
+
 #library        = /usr/share/my_modules/
 
 
-Edit the inventory file.
+#Edit the inventory file.
 
 ```bash
 sudo vi /etc/ansible/hosts
