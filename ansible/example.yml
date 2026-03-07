@@ -1,5 +1,4 @@
-# To execute playbook
-ansible-playbook examole.yml
+# To execute playbook  --->  ansible-playbook examole.yml
 
 ---
 - name: Common Server Configuration
