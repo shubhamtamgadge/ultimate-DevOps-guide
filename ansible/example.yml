@@ -1,0 +1,119 @@
+---
+- name: Common Server Configuration
+  hosts: all
+  become: true
+
+  vars:
+    packages:
+      - git
+      - curl
+      - wget
+      - vim
+      - unzip
+      - htop
+
+    users:
+      - devops
+      - deploy
+
+  tasks:
+
+    # Update all system packages
+    - name: Update system packages
+      ansible.builtin.yum:
+        name: "*"
+        state: latest
+
+    # Install commonly used utilities using loop
+    - name: Install common packages
+      ansible.builtin.yum:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ packages }}"
+
+    # Create multiple users using loop
+    - name: Create users
+      ansible.builtin.user:
+        name: "{{ item }}"
+        groups: wheel
+        append: yes
+        shell: /bin/bash
+        create_home: yes
+      loop: "{{ users }}"
+
+    # Ensure SSH service is running and enabled
+    - name: Ensure SSH service is running
+      ansible.builtin.service:
+        name: sshd
+        state: started
+        enabled: true
+
+    # Install Nginx web server
+    - name: Install nginx
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+
+    # Start and enable nginx service
+    - name: Enable and start nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    # Create application directory
+    - name: Create application directory
+      ansible.builtin.file:
+        path: /opt/app
+        state: directory
+        owner: devops
+        group: devops
+        mode: '0755'
+
+    # Clone application repository from Git
+    - name: Clone application repository
+      ansible.builtin.git:
+        repo: https://github.com/example/sample-app.git
+        dest: /opt/app
+        version: main
+
+    # Copy a local file from Ansible control node to server
+    - name: Copy application config file
+      ansible.builtin.copy:
+        src: files/app.conf
+        dest: /opt/app/app.conf
+        owner: devops
+        group: devops
+        mode: '0644'
+
+    # Create a file with custom content
+    - name: Create environment file
+      ansible.builtin.copy:
+        dest: /opt/app/.env
+        content: |
+          APP_ENV=production
+          APP_PORT=8080
+          APP_NAME=sample-app
+
+    # Add multiple lines to a file using loop
+    - name: Add host entries
+      ansible.builtin.lineinfile:
+        path: /etc/hosts
+        line: "{{ item }}"
+        state: present
+      loop:
+        - "127.0.0.1 internal-app"
+        - "127.0.0.1 monitoring-service"
+
+    # Open HTTP port in firewall
+    - name: Allow HTTP traffic
+      ansible.builtin.firewalld:
+        service: http
+        permanent: yes
+        state: enabled
+        immediate: yes
+
+    # Set system timezone
+    - name: Set timezone
+      ansible.builtin.timezone:
+        name: Asia/Kolkata
