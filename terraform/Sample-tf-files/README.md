@@ -1,41 +1,41 @@
-# Commands to initialize and run Terraform  
+# Commands to initialize, run and destroy Terraform  
 
-Initialize terraform
+**Initialize terraform**
 ```bash
 terraform init
 ```
 
-formate file (correct indentation and all)
+**Formate file (correct indentation and all)**
 ```bash
 terraform fmt
 ```
-validate .tf file
+**Validate .tf file**
 ```bash
 terraform validate
 ```
 
-shows what is it going to do 
+**Shows what is it going to do** 
 ```bash
 terraform plan
 ```
 
 
-apply terraform
+**Apply terraform**
 ```bash
 terraform apply
 ```
 
-destroy terraform (everything)
+**Destroy terraform (everything)**
 ```bash
 terraform destroy
 ```
 
-to destroy terraform without asking for yes/no (everything)
+**To destroy terraform without asking for yes/no (everything)**
 ```bash
 terraform apply -auto-approve
 ```
 
-to destroy specific terraform 
+**To destroy specific terraform**
 ```bash
 terraform --target=aws_instance.my-instance-name
 ```
