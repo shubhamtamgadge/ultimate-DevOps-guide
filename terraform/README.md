@@ -1,3 +1,6 @@
+
+
+
 go to google and search "terraform installation" ---> select the os type {if default amazon
 select the amaxon linux 2023 ---> copy below commands}
 
@@ -16,6 +19,7 @@ sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinu
 ```bash
 sudo dnf -y install terraform
 ```
+
 ---------------- Install successfully ----------------
 
 **check version**
